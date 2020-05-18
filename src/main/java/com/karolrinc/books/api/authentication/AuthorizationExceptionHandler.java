@@ -1,4 +1,4 @@
-package com.karolrinc.books.api.authorization;
+package com.karolrinc.books.api.authentication;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

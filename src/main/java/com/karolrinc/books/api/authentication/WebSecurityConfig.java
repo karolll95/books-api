@@ -1,4 +1,4 @@
-package com.karolrinc.books.api.authorization;
+package com.karolrinc.books.api.authentication;
 
 import lombok.NonNull;
 import org.springframework.beans.factory.annotation.Autowired;

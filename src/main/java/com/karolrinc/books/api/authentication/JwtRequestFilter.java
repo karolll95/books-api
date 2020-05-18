@@ -1,4 +1,4 @@
-package com.karolrinc.books.api.authorization;
+package com.karolrinc.books.api.authentication;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import lombok.NonNull;
