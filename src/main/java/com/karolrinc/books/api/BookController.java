@@ -17,7 +17,7 @@ import static org.springframework.util.MimeTypeUtils.APPLICATION_JSON_VALUE;
 import static org.springframework.web.servlet.support.ServletUriComponentsBuilder.fromCurrentRequest;
 
 @RestController
-@RequestMapping(value = "/api/books", produces = "application/hal+json")
+@RequestMapping(value = "/books", produces = "application/hal+json")
 class BookController {
 
     private final BookService bookService;

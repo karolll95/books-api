@@ -35,6 +35,7 @@ class Book {
 
     @Min(1)
     @Max(5)
+    @NotNull
     private Integer rating;
 
 }
