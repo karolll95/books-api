@@ -36,8 +36,8 @@ class BookControllerIntegrationTest {
 
     @Test
     void addBook_success() {
-        Book book = getBook(null);
-        Book savedBook = getBook(1L);
+        final Book book = getBook(null);
+        final Book savedBook = getBook(1L);
         when(bookService.addBook(book)).thenReturn(savedBook);
 
         ResponseEntity<?> result = bookController.addBook(book, bindingResult);
@@ -49,8 +49,8 @@ class BookControllerIntegrationTest {
 
     @Test
     void addBook_validationError() {
-        Book book = getBook(null);
-        List<ObjectError> errors = singletonList(new ObjectError("name", "defaultMsg"));
+        final Book book = getBook(null);
+        final List<ObjectError> errors = singletonList(new ObjectError("name", "defaultMsg"));
         when(bindingResult.hasErrors()).thenReturn(true);
         when(bindingResult.getAllErrors()).thenReturn(errors);
 
