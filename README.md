@@ -4,12 +4,9 @@ Books API is designed to provide You with CRUD operations for books.
 
 ## Installation
 
-The fastest way to run the application is to import this project to your IDE and run BookApiApplication.class.
-
 With default configuration You need to have MySQL database named booksdb running on localhost with MySQL credentials: root:root.
-By default server will start at http://localhost:9191
+By default server will start at http://localhost:9191/api
 You can customize these settings by changing the application.properties file.
-
 
 
 ## Usage
