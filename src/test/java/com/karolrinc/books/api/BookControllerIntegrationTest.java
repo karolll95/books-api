@@ -43,7 +43,8 @@ class BookControllerIntegrationTest {
         ResponseEntity<?> result = bookController.addBook(book, bindingResult);
 
         assertEquals(HttpStatus.CREATED, result.getStatusCode());
-        assertEquals(savedBook, result.getBody());
+        assertNotNull(result.getBody());
+        assertEquals(savedBook, ((BookResource) result.getBody()).getBook());
     }
 
     @Test
