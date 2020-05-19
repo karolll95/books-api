@@ -8,24 +8,26 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice("com.karolrinc.books.api.authorization")
 @Slf4j
-class AuthorizationExceptionHandler {
-    private static final String DEFAULT_ERROR_MSG = "Something went wrong. Please contact support.";
+class AuthenticationExceptionHandler {
 
     @ExceptionHandler(UserDisabledException.class)
     public ResponseEntity<?> handleUserDisabledException(UserDisabledException e) {
         log.error(e.getMessage(), e);
-        return new ResponseEntity<>(UserDisabledException.DEFAULT_MSG, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                             .body(UserDisabledException.DEFAULT_MSG);
     }
 
     @ExceptionHandler(InvalidUserCredentialsException.class)
     public ResponseEntity<?> handleInvalidUserCredentialsException(InvalidUserCredentialsException e) {
         log.error(e.getMessage(), e);
-        return new ResponseEntity<>(InvalidUserCredentialsException.DEFAULT_MSG, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                             .body(InvalidUserCredentialsException.DEFAULT_MSG);
     }
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleException(Exception e) {
         log.error(e.getMessage(), e);
-        return new ResponseEntity<>(DEFAULT_ERROR_MSG, HttpStatus.INTERNAL_SERVER_ERROR);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                             .body("Something went wrong. Please contact support.");
     }
 }
