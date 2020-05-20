@@ -24,8 +24,8 @@ class AuthenticationExceptionHandler {
                              .body(InvalidUserCredentialsException.DEFAULT_MSG);
     }
 
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<?> handleException(Exception e) {
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<?> handleRuntimeException(RuntimeException e) {
         log.error(e.getMessage(), e);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                              .body("Something went wrong. Please contact support.");
